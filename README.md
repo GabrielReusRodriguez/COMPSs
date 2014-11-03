@@ -1,0 +1,4 @@
+CompSs
+======
+
+CompSs del BSC
