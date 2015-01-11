@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>compss-xml-schemas</artifactId>
+    <groupId>integratedtoolkit</groupId>
+    <version>1.2</version>
+    <relativePath>..</relativePath>
+  </parent>
+  <artifactId>compss-monitor-schema</artifactId>
+  <name>Monitor Schema</name>
+  <description>Monitor schema</description>
+  
+  <build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+                </configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				<version>0.8.0</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>generate</goal>
+							<!-- goal>xjc</goal-->
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<schemaDirectory>${basedir}</schemaDirectory>
+					<schemaFiles>monitor_schema.xsd</schemaFiles>
+					<generateDirectory>${basedir}/src/main/java/</generateDirectory>
+					<generatePackage>integratedtoolkit.types.monitor.jaxb</generatePackage>
+				</configuration>
+			</plugin>
+     	</plugins>
+	</build>
+			
+</project>

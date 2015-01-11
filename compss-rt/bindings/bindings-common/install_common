@@ -1,0 +1,13 @@
+#!/bin/bash
+
+export JAVA_LIB_DIR=$JAVA_HOME/jre/lib/amd64/server
+autoreconf --force --install
+./configure --prefix=$BUILDROOT/$TARGETDIR --libdir=$BUILDROOT/$TARGETDIR/lib
+make
+make install
+
+autoreconf --force --install
+./configure --prefix=$BUILDROOT2/$TARGETDIR2 --libdir=$BUILDROOT2/$TARGETDIR2/lib
+make
+make install
+
